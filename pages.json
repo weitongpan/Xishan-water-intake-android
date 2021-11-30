@@ -1,0 +1,120 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index"
+		}
+	    ,{
+            "path" : "pages/basic-information/basic-information",
+            "style" :
+            {
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/demonstration/demonstration",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/transaction/transaction",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/preview/preview",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/licence/licence",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/water-intake-facilities/water-intake-facilities",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/water-intake-plan/water-intake-plan",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/supervision/supervision",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/levy-taxes/levy-taxes",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/carrier/carrier",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/audit/audit",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/water-balance-test/water-balance-test",
+            "style" :
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationStyle": "custom",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
