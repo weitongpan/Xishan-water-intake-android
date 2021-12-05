@@ -3,7 +3,7 @@
     <top-nav/>
     <view class="content-box">
       <view class="content">
-        <view class="title">取水计划</view>
+        <view class="title">监督管理</view>
         <view class="material-science">文件及归档材料</view>
         <view class="table-box">
           <view class="table-r table-head">
@@ -27,78 +27,7 @@
         </view>
       </view>
     </view>
-    <uni-popup ref="popup"
-               @change="isMessageChange"
-               background-color="#fff">
-      <view class="popup">
-        <view class="title">
-          <text>监督管理详情</text>
-          <image src="../../static/supervision/cancel@2x.png"
-                 @click="detailsClose"
-          />
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            监管内容
-          </view>
-          <view class="popup-r-content">
-            监管内容
-          </view>
-        </view>
-        <view class="popup-r file-box">
-          <view class="popup-r-title">
-            检查结果
-          </view>
-          <view class="popup-r-content">
-            <view class="content-img">文件材料.pdf</view>
-            <view class="content-img">文件材料.pdf</view>
-            <view class="content-img">现场图片.png</view>
-            <view class="content-img">现场图片.png</view>
-          </view>
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            检查结果
-          </view>
-          <view class="popup-r-content">
-            这是示例文字：东莞市达菱机电设备有限公司是一家专业销售各种型号冷却塔及水泵专业厂家. 冷却塔系统有:制造不锈钢冷却塔、闭式冷却塔、工业冷却塔、空调冷却塔。冷却塔又称凉水塔、冷却水塔
-          </view>
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            整改与处理
-          </view>
-          <view class="popup-r-content">
-            这是示例文字：东莞市达菱机电设备有限公司是一家专业销售各种型号冷却塔及水泵专业厂家. 冷却塔系统有:制造不锈钢冷却塔、闭式冷却塔、工业冷却塔、空调冷却塔。冷却塔又称凉水塔、冷却水塔
-          </view>
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            填报单位
-          </view>
-          <view class="popup-r-content">
-            东港镇水里管理站
-          </view>
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            填报人
-          </view>
-          <view class="popup-r-content">
-            刘娟
-          </view>
-        </view>
-        <view class="popup-r">
-          <view class="popup-r-title">
-            填报日期
-          </view>
-          <view class="popup-r-content">
-            2021-09-29
-          </view>
-        </view>
-      </view>
-    </uni-popup>
-    <view v-if="isMessage" class="message">详情查阅锡山区取水监管信息化系统</view>
+    <view v-if="isShow" class="message">详情查阅锡山区取水监管信息化系统</view>
   </view>
 </template>
 
@@ -111,7 +40,7 @@ export default {
   },
   data () {
     return {
-      isMessage: false,
+      isShow: false,
       list: [
         {
           text1: '01',
@@ -225,21 +154,11 @@ export default {
     }
   },
   methods: {
-    isMessageChange(e) {
-      if (e.show) {
-        this.isMessage = true
-        setTimeout(() => {
-          this.isMessage = false
-        },2000)
-      } else {
-        this.isMessage = false
-      }
-    },
     detailsClick() {
-      this.$refs.popup.open()
-    },
-    detailsClose() {
-      this.$refs.popup.close()
+      this.isShow = true
+      setTimeout(() => {
+        this.isShow = false
+      }, 2000)
     }
   }
 }

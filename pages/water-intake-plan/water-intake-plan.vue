@@ -14,152 +14,20 @@
             <text>取水计划调度申请表</text>
             <text>调整计划下达文件</text>
           </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-          </view>
-          <view class="table-r">
-            <text class="r-number">01</text>
-            <text>2021</text>
-            <text>6803</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
-            <text>申请表.txt</text>
-            <text>文件.txt</text>
+          <view class="table-r" v-for="item in fileData">
+            <text class="r-number">{{ item.id }}</text>
+            <text>{{ item.t1 }}</text>
+            <text>{{ item.t2 }}</text>
+            <text @click="previewFile(item.isShow)">{{ item.t3 }}</text>
+            <text @click="previewFile(item.isShow)">{{ item.t4 }}</text>
+            <text @click="previewFile(item.isShow)">{{ item.t5 }}</text>
+            <text @click="previewFile(item.isShow)">{{ item.t6 }}</text>
           </view>
         </view>
       </view>
+    </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
     </view>
   </view>
 </template>
@@ -172,9 +40,76 @@ export default {
     topNav
   },
   data () {
-    return {}
+    return {
+      isShow: false,
+      fileData: [
+        {
+          id: '01',
+          t1: '2021',
+          t2: '6803',
+          t3: '申请表.txt',
+          t4: '文件.txt',
+          t5: '申请表.txt',
+          t6: '文件.txt',
+          isShow: false
+        },
+        {
+          id: '02',
+          t1: '2021',
+          t2: '6803',
+          t3: '申请表.txt',
+          t4: '文件.txt',
+          t5: '申请表.txt',
+          t6: '文件.txt',
+          isShow: true
+        },
+        {
+          id: '03',
+          t1: '2021',
+          t2: '6803',
+          t3: '申请表.txt',
+          t4: '文件.txt',
+          t5: '申请表.txt',
+          t6: '文件.txt',
+          isShow: true
+        },
+        {
+          id: '04',
+          t1: '2021',
+          t2: '6803',
+          t3: '申请表.txt',
+          t4: '文件.txt',
+          t5: '申请表.txt',
+          t6: '文件.txt',
+          isShow: false
+        },
+        {
+          id: '05',
+          t1: '2021',
+          t2: '6803',
+          t3: '申请表.txt',
+          t4: '文件.txt',
+          t5: '申请表.txt',
+          t6: '文件.txt',
+          isShow: true
+        }
+      ]
+    }
   },
-  methods: {}
+  methods: {
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
+    }
+  }
 }
 </script>
 
@@ -236,6 +171,28 @@ export default {
           color: #000000 !important;
         }
       }
+    }
+  }
+
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

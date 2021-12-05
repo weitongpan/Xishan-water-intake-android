@@ -57,9 +57,105 @@
             <view :class="{active: controllerNumber === 2}" @click="controllerClick(2)">水利工程水费</view>
           </view>
         </view>
-        <view class="table-box">
+        <view class="table-box" v-if="controllerNumber === 0">
           <view class="table-r table-head">
-            <text>取水缴费时间</text>
+            <text>取水缴费期间</text>
+            <text>上月抄表数</text>
+            <text>本月抄表数</text>
+            <text>本月取水量</text>
+          </view>
+          <view class="table-r">
+            <text>1月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+          </view>
+          <view class="table-r">
+            <text>2月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+          </view>
+          <view class="table-r">
+            <text>3月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+          </view>
+          <view class="table-r">
+            <text>4月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+          </view>
+          <view class="table-r">
+            <text>5月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+          </view>
+        </view>
+        <view class="table-box" v-if="controllerNumber === 1">
+          <view class="table-r table-head">
+            <text>取水缴费期间</text>
+            <text>收费标准</text>
+            <text>本月应收费用</text>
+            <text>本月实收费用</text>
+            <text>累计应收费用</text>
+            <text>累计实收费用</text>
+          </view>
+          <view class="table-r">
+            <text>1月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+          <view class="table-r">
+            <text>2月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+          <view class="table-r">
+            <text>3月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+          <view class="table-r">
+            <text>4月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+          <view class="table-r">
+            <text>5月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+          <view class="table-r">
+            <text>6月</text>
+            <text>0.3</text>
+            <text>0.00</text>
+            <text>0</text>
+            <text>0.00</text>
+            <text>0.00</text>
+          </view>
+        </view>
+        <view class="table-box" v-if="controllerNumber === 2">
+          <view class="table-r table-head">
+            <text>取水缴费期间</text>
             <text>收费标准</text>
             <text>本月应收费用</text>
             <text>本月实收费用</text>

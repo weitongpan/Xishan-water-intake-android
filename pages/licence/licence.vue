@@ -22,14 +22,14 @@
           <view class="info1-box-right">
             <view class="info1-box-right-title">取水许可证首页：</view>
             <view class="info1-box-right-img">
-              <image src="../../static/basic-information/bz@2x.png"></image>
+              <image src="../../static/basic-information/bz@2x.png" @click="viewPicture('../../static/basic-information/bz@2x.png')"></image>
             </view>
           </view>
         </view>
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">水源类型：</text>
-            <text class="info2-box-left-r-content">水源类型：</text>
+            <text class="info2-box-left-r-content">地下水</text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">年允许取水量(万m³/年)：</text>
@@ -49,27 +49,29 @@
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可申请表：</text>
-            <text class="info3-box-left-r-content file" @click="previewFile">申请文件.txt</text>
+            <text class="info3-box-left-r-content file" @click="previewFile(true)">申请文件.txt</text>
+            <text class="info3-box-left-r-content">2020-09-10</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可批复文件：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile">复印件文件.pdf</text>
+            <text class="info3-box-right-r-content file" @click="previewFile(false)">复印件文件.pdf</text>
             <text class="info3-box-right-r-content">2020-09-10</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
-            <text class="info3-box-left-r-title">取水许可登记表</text>
-            <text class="info3-box-left-r-content file" @click="previewFile">登记文件.txt</text>
+            <text class="info3-box-left-r-title">取水许可登记表：</text>
+            <text class="info3-box-left-r-content file" @click="previewFile(true)">登记文件.txt</text>
+            <text class="info3-box-left-r-content">2020-09-10</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可证：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile">许可证.png</text>
+            <text class="info3-box-right-r-content file" @click="previewFile(false)">许可证.png</text>
             <text class="info3-box-right-r-content">2020-09-10</text>
           </view>
         </view>
         <view class="info4-box">
-          <view class="info4-box-title">主要产品：</view>
+          <view class="info4-box-title">延续审批材料：</view>
           <view class="info4-box-table">
             <view class="table-head">
               <text>#</text>
@@ -99,9 +101,26 @@
               <text>评估表1.txt</text>
               <text>决定书1.txt</text>
             </view>
+            <view class="table-body">
+              <text>03</text>
+              <text>2021</text>
+              <text>申请表1.txt</text>
+              <text>评估表1.txt</text>
+              <text>决定书1.txt</text>
+            </view>
+            <view class="table-body">
+              <text>03</text>
+              <text>2021</text>
+              <text>申请表1.txt</text>
+              <text>评估表1.txt</text>
+              <text>决定书1.txt</text>
+            </view>
           </view>
         </view>
       </view>
+    </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
     </view>
   </view>
 </template>
@@ -114,13 +133,25 @@ export default {
   },
   data() {
     return {
-
+      isShow: false
     }
   },
   methods: {
-    previewFile() {
-      uni.navigateTo({
-        url: '/pages/preview/preview'
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
+    },
+    viewPicture(path) {
+      uni.openDocument({
+        filePath: path
       })
     }
   }
@@ -364,6 +395,27 @@ export default {
           }
         }
       }
+    }
+  }
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

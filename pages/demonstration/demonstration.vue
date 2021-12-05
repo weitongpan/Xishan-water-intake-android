@@ -10,7 +10,7 @@
           </view>
           <view class="table-r-file">
             <image src="../../static/demonstration/pdf-2@2x.png"/>
-            <text @click="previewFile">水资源论证报告.pdf</text>
+            <text @click="previewFile(false)">水资源论证报告.pdf</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-10</text>
@@ -22,13 +22,16 @@
           </view>
           <view class="table-r-file">
             <image src="../../static/public/txt@2x.png"/>
-            <text @click="previewFile">节水评价.txt</text>
+            <text @click="previewFile(true)">节水评价.txt</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-02</text>
           </view>
         </view>
       </view>
+    </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
     </view>
   </view>
 </template>
@@ -41,14 +44,21 @@ export default {
   },
   data() {
     return {
-
+      isShow: false
     }
   },
   methods: {
-    previewFile() {
-      uni.navigateTo({
-        url: '/pages/preview/preview'
-      })
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
     }
   }
 }
@@ -123,6 +133,27 @@ export default {
       .table-r:nth-child(2n + 1){
         background: #f1f6ff;
       }
+    }
+  }
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

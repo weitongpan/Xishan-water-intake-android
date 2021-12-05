@@ -28,7 +28,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png"></image>
+              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -36,7 +36,7 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png"></image>
+              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
             </view>
           </view>
         </view>
@@ -62,6 +62,26 @@
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
+            <text class="info3-box-left-r-title">水泵设计扬程（单位m)：</text>
+            <text class="info3-box-left-r-content">0.063</text>
+          </view>
+          <view class="info3-box-right">
+            <text class="info3-box-right-r-title">日最大取水能力（单位m³/d)：</text>
+            <text class="info3-box-right-r-content">5479.5</text>
+          </view>
+        </view>
+        <view class="x-r info3-box">
+          <view class="info3-box-left">
+            <text class="info3-box-left-r-title"></text>
+            <text class="info3-box-left-r-content report" @click="previewFile(false)">取水工程（设施）验收申请书</text>
+          </view>
+          <view class="info3-box-right">
+            <text class="info3-box-right-r-title"></text>
+            <text class="info3-box-right-r-content report" @click="previewFile(true)">取水工程（设施）验收报告</text>
+          </view>
+        </view>
+        <view class="x-r info3-box">
+          <view class="info3-box-left">
             <text class="info3-box-left-r-title">水井数量：</text>
             <text class="info3-box-left-r-content">2</text>
           </view>
@@ -71,7 +91,7 @@
           </view>
         </view>
         <view class="x-r info4-box">
-          <view class="info4-box-title">主要产品：</view>
+          <view class="info4-box-title">水井：</view>
           <view class="info4-box-table">
             <view class="table-head">
               <text>#</text>
@@ -93,30 +113,10 @@
             </view>
             <view class="table-body">
               <text>03</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
+              <text>第2层</text>
+              <text>12</text>
+              <text>180</text>
             </view>
-          </view>
-        </view>
-        <view class="x-r info3-box">
-          <view class="info3-box-left">
-            <text class="info3-box-left-r-title">水泵设计扬程（单位m)：</text>
-            <text class="info3-box-left-r-content">0.063</text>
-          </view>
-          <view class="info3-box-right">
-            <text class="info3-box-right-r-title">日最大取水能力（单位m³/d)：</text>
-            <text class="info3-box-right-r-content">5479.5</text>
-          </view>
-        </view>
-        <view class="x-r info3-box">
-          <view class="info3-box-left">
-            <text class="info3-box-left-r-title"></text>
-            <text class="info3-box-left-r-content report" @click="previewFile">取水工程（设施）验收申请书</text>
-          </view>
-          <view class="info3-box-right">
-            <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="previewFile">取水工程（设施）验收报告</text>
           </view>
         </view>
         <view class="x-r info3-box">
@@ -155,7 +155,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png"></image>
+              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -163,22 +163,22 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png"></image>
+              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
             </view>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title"></text>
-            <text class="info3-box-left-r-content report" @click="previewFile">计量率定报告</text>
+            <text class="info3-box-left-r-content report" @click="previewFile(false)">计量率定报告</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="previewFile">计量设施检验报告</text>
+            <text class="info3-box-right-r-content report" @click="previewFile(true)">计量设施检验报告</text>
           </view>
         </view>
         <view class="x-r info4-box">
-          <view class="info4-box-title">主要产品：</view>
+          <view class="info4-box-title">⽇常运维记录：</view>
           <view class="info4-box-table">
             <view class="table-head">
               <text>#</text>
@@ -208,6 +208,9 @@
         </view>
       </view>
     </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
+    </view>
   </view>
 </template>
 
@@ -219,13 +222,25 @@ export default {
   },
   data() {
     return {
-
+      isShow: false
     }
   },
   methods: {
-    previewFile() {
-      uni.navigateTo({
-        url: '/pages/preview/preview'
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
+    },
+    viewPicture(path) {
+      uni.openDocument({
+        filePath: path
       })
     }
   }
@@ -391,6 +406,27 @@ export default {
           }
         }
       }
+    }
+  }
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

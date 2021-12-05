@@ -12,7 +12,7 @@
           <view class="file-img">
             <image src="../../static/public/txt@2x.png"/>
           </view>
-          <view class="file-name" @click="previewFile">江苏省水利厅文件</view>
+          <view class="file-name" @click="previewFile(false)">江苏省水利厅文件</view>
         </view>
         <view class="info4-box">
           <view class="info4-box-title">文件及归档材料：</view>
@@ -22,49 +22,17 @@
               <text>归档年度</text>
               <text>水平衡测试报告(表）</text>
             </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>测试报告.txt</text>
+            <view class="table-body" v-for="item in fileData">
+              <text>{{ item.id }}</text>
+              <text>{{ item.t1 }}</text>
+              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>
             </view>
           </view>
         </view>
       </view>
+    </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
     </view>
   </view>
 </template>
@@ -77,13 +45,54 @@ export default {
     topNav
   },
   data () {
-    return {}
+    return {
+      isShow: false,
+      fileData: [
+        {
+          id: '01',
+          t1: '2021',
+          t2: '测试报告.txt',
+          isShow: false
+        },
+        {
+          id: '02',
+          t1: '2021',
+          t2: '测试报告.txt',
+          isShow: true
+        },
+        {
+          id: '03',
+          t1: '2021',
+          t2: '测试报告.txt',
+          isShow: true
+        },
+        {
+          id: '04',
+          t1: '2021',
+          t2: '测试报告.txt',
+          isShow: false
+        },
+        {
+          id: '05',
+          t1: '2021',
+          t2: '测试报告.txt',
+          isShow: false
+        }
+      ]
+    }
   },
   methods: {
-    previewFile() {
-      uni.navigateTo({
-        url: '/pages/preview/preview'
-      })
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
     }
   }
 }
@@ -205,6 +214,27 @@ export default {
           }
         }
       }
+    }
+  }
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

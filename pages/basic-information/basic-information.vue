@@ -3,7 +3,7 @@
 		<top-nav/>
     <view class="content-box">
       <view class="content">
-        <view class="title">企业基础信息</view>
+        <view class="title">取水单位基础信息</view>
         <view class="info1-box">
           <view class="info1-box-left">
             <view class="info1-box-left-r">
@@ -50,16 +50,16 @@
             <view class="table-head">
               <text>#</text>
               <text>产品种类</text>
-              <text>产品种类</text>
+              <text>年产量</text>
               <text>行业用水定额</text>
               <text>实际用水定额</text>
             </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>电力生产</text>
-              <text>19000000000Kwh</text>
-              <text>1.85m³/Mwh</text>
-              <text>1.78m³/Mwh</text>
+            <view class="table-body" v-for="item in mainProductsData.slice(0, 3)">
+              <text>{{ item.id }}</text>
+              <text>{{ item.t1 }}</text>
+              <text>{{ item.t2 }}</text>
+              <text>{{ item.t3 }}</text>
+              <text>{{ item.t4 }}</text>
             </view>
           </view>
         </view>
@@ -104,7 +104,36 @@ import topNav from '../../components/nav/topNav'
     },
 		data() {
 			return {
-
+        mainProductsData: [
+          {
+            id: '01',
+            t1: '电力生产',
+            t2: '19000000000Kwh',
+            t3: '1.85m³/Mwh',
+            t4: '1.78m³/Mwh'
+          },
+          {
+            id: '02',
+            t1: '电力生产',
+            t2: '19000000000Kwh',
+            t3: '1.85m³/Mwh',
+            t4: '1.78m³/Mwh'
+          },
+          {
+            id: '03',
+            t1: '电力生产',
+            t2: '19000000000Kwh',
+            t3: '1.85m³/Mwh',
+            t4: '1.78m³/Mwh'
+          },
+          {
+            id: '04',
+            t1: '电力生产',
+            t2: '19000000000Kwh',
+            t3: '1.85m³/Mwh',
+            t4: '1.78m³/Mwh'
+          }
+        ]
 			}
 		}
 	}
@@ -324,6 +353,9 @@ import topNav from '../../components/nav/topNav'
               font-weight: 400;
               color: #595959;
             }
+          }
+          .table-body:nth-child(2n + 1){
+            background-color: #f7f7f7;
           }
         }
       }

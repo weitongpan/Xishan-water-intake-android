@@ -6,7 +6,7 @@
         <view class="title">水权交易</view>
         <view class="table-r">
           <view class="table-r-title">
-            <text>1、取水权交易表</text>
+            <text @click="previewFile(false)">1、取水权交易表</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-10</text>
@@ -14,13 +14,16 @@
         </view>
         <view class="table-r">
           <view class="table-r-title">
-            <text>2、取水权交易证</text>
+            <text  @click="previewFile(true)">2、取水权交易证</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-02</text>
           </view>
         </view>
       </view>
+    </view>
+    <view class="tips-box" v-if="isShow">
+      <view class="text">详情查阅锡⼭区取⽔监管信息化系统</view>
     </view>
   </view>
 </template>
@@ -33,10 +36,22 @@ export default {
   },
   data() {
     return {
-
+      isShow: false
     }
   },
   methods: {
+    previewFile(isShow) {
+      if (isShow) {
+        uni.navigateTo({
+          url: '/pages/preview/preview'
+        })
+      } else {
+        this.isShow = true
+        setTimeout(() => {
+          this.isShow = false
+        }, 2000)
+      }
+    }
   }
 }
 </script>
@@ -94,6 +109,27 @@ export default {
       .table-r:nth-child(2n + 1){
         background: #f1f6ff;
       }
+    }
+  }
+  .tips-box{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    .text{
+      margin: 0 auto;
+      width: 1232rpx;
+      height: 200rpx;
+      padding: 56rpx 88rpx;
+      box-sizing: border-box;
+      font-size: 64rpx;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffff;
+      line-height: 90rpx;
+      letter-spacing: 2rpx;
+      background: #000000;
+      border-radius: 30rpx;
     }
   }
 }

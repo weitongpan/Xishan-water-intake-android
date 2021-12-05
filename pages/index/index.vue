@@ -102,6 +102,7 @@
   overflow: auto;
   background-size: cover;
   background-position: center;
+  background-color: #1053c5;
   background-image: url("../../static/index/bg@2x.png");
   .time{
     position: absolute;
