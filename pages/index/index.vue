@@ -5,7 +5,30 @@
       <text class="day">{{ time.day }}</text>
     </view>
 		<view class="title">
-      锡山区取水分户归档台账自助查询终端
+      <view class="title-text">
+        锡山区取水分户归档台账自助查询终端
+      </view>
+      <view class="select-box">
+        <view class="left">取水许可证号</view>
+        <veiw class="right">
+          <view class="right-top">
+            <view class="right-top-text">
+              9194583920028330589D
+            </view>
+            <view class="image-box" @click="selectClick">
+              <image v-show="!isShow" src="../../static/index/xiala@2x.png"></image>
+              <image v-show="isShow" src="../../static/index/shouqi@2x.png"></image>
+            </view>
+          </view>
+          <view v-show="isShow"
+              class="right-bottom"
+          >
+            <view>9194583920028330589D</view>
+            <view>9194583920028330589D</view>
+            <view>9194583920028330589D</view>
+          </view>
+        </veiw>
+      </view>
     </view>
     <view class="content">
       <view class="nav-row">
@@ -55,6 +78,7 @@
 		data() {
 			return {
 			  time: {
+          isShow: false,
           day: '',
           hour: ''
         }
@@ -64,6 +88,9 @@
       this.getDateData()
 		},
 		methods: {
+      selectClick() {
+        this.isShow = !this.isShow
+      },
       goPage(path) {
         uni.navigateTo({
           url: path
@@ -126,12 +153,81 @@
     }
   }
   .title{
-    font-size: 100rpx;
+    position: relative;
     font-family: SourceHanSansCN, SourceHanSansCN-Bold;
     font-weight: 700;
     text-align: center;
+    font-size: 96rpx;
     color: #ffffff;
     margin-top: 162rpx;
+    .title-text{
+      position: relative;
+      left: -60rpx;
+    }
+    .select-box{
+      position: absolute;
+      box-sizing: border-box;
+      z-index: 1;
+      right: 56rpx;
+      top: 0;
+      font-size: 22px;
+      font-family: PingFangSC, PingFangSC-Medium;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 1px;
+      width: 1020rpx;
+      display: flex;
+      .left{
+        color: #ffffff;
+        width: 308rpx;
+        height: 120rpx;
+        line-height: 120rpx;
+        //box-sizing: border-box;
+        color: #cccccc;
+        background: rgba(255,255,255,0.10);
+        border: 2rpx solid rgba(255,255,255,0.30);
+        border-right: 2rpx solid rgba(255,255,255,0.20);
+        text-align: center;
+        font-size: 40rpx;
+      }
+      .right{
+        .right-top{
+          box-sizing: border-box;
+          border: 2rpx solid rgba(255,255,255,0.30);
+          border-left: none;
+          display: flex;
+          .right-top-text{
+            background: rgba(255,255,255,0.10);
+            width: 608rpx;
+            height: 120rpx;
+            line-height: 120rpx;
+          }
+          .image-box{
+            background: rgba(255,255,255,0.20);
+            width: 104rpx;
+            height: 120rpx;
+            line-height: 120rpx;
+            text-align: center;
+            image{
+              width: 42rpx;
+              height: 26rpx;
+            }
+          }
+        }
+        .right-bottom{
+          width: 712rpx;
+          text-align: left;
+          padding-left: 18rpx;
+          box-sizing: border-box;
+          background: rgba(255,255,255,0.20);
+          view{
+            height: 120rpx;
+            line-height: 120rpx;
+          }
+
+        }
+      }
+    }
   }
   .content{
     width: 3204rpx;

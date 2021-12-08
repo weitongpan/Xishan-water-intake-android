@@ -22,7 +22,7 @@
           <view class="info1-box-right">
             <view class="info1-box-right-title">营业执照：</view>
             <view class="info1-box-right-img">
-              <image src="../../static/basic-information/bz@2x.png"></image>
+              <image src="../../static/basic-information/bz@2x.png" @click="viewPicture('../../static/basic-information/bz@2x.png')"></image>
             </view>
           </view>
         </view>
@@ -135,7 +135,14 @@ import topNav from '../../components/nav/topNav'
           }
         ]
 			}
-		}
+		},
+    methods: {
+      viewPicture(path) {
+        uni.openDocument({
+          filePath: path
+        })
+      }
+    }
 	}
 </script>
 <style scoped lang="scss">

@@ -5,7 +5,7 @@
       <view class="content">
         <view class="title">
           <view class="select-box">
-            <view class="select-head" @click="selectShow">
+            <view class="select-head" @click="show">
               <view class="year">
                 <text>{{ year }}</text>
               </view>
@@ -236,7 +236,7 @@ export default {
       this.year = item
       this.selectIsShow = false
     },
-    selectShow() {
+    show() {
       this.selectIsShow = !this.selectIsShow
     },
     controllerClick(index) {
