@@ -8,26 +8,26 @@
       <view class="title-text">
         锡山区取水分户归档台账自助查询终端
       </view>
-<!--      <view class="select-box">-->
-<!--        <view class="left">取水许可证号</view>-->
-<!--        <view class="right">-->
-<!--          <view class="right-top">-->
-<!--            <view class="right-top-text">-->
-<!--              9194583920028330589D-->
-<!--            </view>-->
-<!--            <view class="image-box" @click="selectClick">-->
-<!--              <image v-show="!isShow" src="../../static/index/xiala@2x.png"></image>-->
-<!--              <image v-show="isShow" src="../../static/index/shouqi@2x.png"></image>-->
-<!--            </view>-->
-<!--          </view>-->
-<!--          <view v-show="isShow"-->
-<!--              class="right-bottom"-->
-<!--          >-->
-<!--            <view>9194583920028330589D</view>-->
-<!--            <view>9194583920028330589D</view>-->
-<!--          </view>-->
-<!--        </view>-->
-<!--      </view>-->
+      <view class="select-box">
+        <view class="left">取水许可证号</view>
+        <view class="right">
+          <view class="right-top">
+            <view class="right-top-text">
+              {{ waterIntakeNo }}
+            </view>
+            <view class="image-box" @click="selectClick">
+              <image v-show="!isShow" src="../../static/index/xiala@2x.png"></image>
+              <image v-show="isShow" src="../../static/index/shouqi@2x.png"></image>
+            </view>
+          </view>
+          <view v-show="isShow"
+              class="right-bottom"
+          >
+            <view @click="switchNumber('D320205S2021-0114', 2)">D320205S2021-0114</view>
+            <view @click="switchNumber('D320205G2021-0125', 3)">D320205G2021-0125</view>
+          </view>
+        </view>
+      </view>
     </view>
     <view class="content">
       <view class="nav-row">
@@ -77,6 +77,7 @@ import data from '../../data/data'
 	export default {
 		data() {
 			return {
+        waterIntakeNo: 'D320205S2021-0114',
         isShow: false,
 			  time: {
           day: '',
@@ -90,8 +91,17 @@ import data from '../../data/data'
     },
 
 		methods: {
+      switchNumber(number, s) {
+        this.waterIntakeNo = number
+        this.isShow = false
+        if (s === 2) {
+          this.$store.commit('SET_DATA', data.data2)
+        } else {
+          this.$store.commit('SET_DATA', data.data3)
+        }
+      },
 		  setFictitiousData() {
-        this.$store.commit('SET_DATA', data.data1)
+        this.$store.commit('SET_DATA', data.data2)
       },
       selectClick() {
         this.isShow = !this.isShow

@@ -89,8 +89,8 @@ const data2 = {
 		waterIntake: '25.0',
 		waterIntakeDate: '833.0',
 		waterIntakeMax: '0.0096',
-		imgUrl: '',
-		pdfUrl: '',
+		imgUrl: '../../static/file/d2/xkz.jpg',
+		pdfUrl: '../../static/file/d2/d2.pdf',
 		pafName: '取水证许可-晶海氨基酸地表水.pdf'
 
 	},
@@ -104,9 +104,13 @@ const data2 = {
 		facilities: '水泵',
 		lift: '22.0',
 		number: null,
-		layer: null,
-		wellDepth: null,
-		wellDiameter: null,
+		well: [
+			{
+				layer: null,
+				wellDepth: null,
+				wellDiameter: null,
+			}
+		],
 		ability: '833.0',
 		metering: '超声波流量计',
 		meteringConten: '流量',
@@ -147,8 +151,8 @@ const data3 = {
 		waterIntake: '16.0',
 		waterIntakeDate: '533.0',
 		waterIntakeMax: '0.0060',
-		imgUrl: '',
-		pdfUrl: '',
+		imgUrl: '../../static/file/d3/xkz.jpg',
+		pdfUrl: '../../static/file/d3/d3.pdf',
 		pafName: '取水证许可-晶海氨基酸地下水.pdf'
 
 	},
@@ -162,9 +166,13 @@ const data3 = {
 		facilities: '水井',
 		lift: null,
 		number: 2,
-		layer: '第II承压',
-		wellDepth: '110',
-		wellDiameter: '30',
+		well: [
+			{
+				layer: '第II承压',
+				wellDepth: '110',
+				wellDiameter: '30'
+			}
+		],
 		ability: '532.0',
 		metering: '超声波流量计',
 		meteringConten: '流量',
