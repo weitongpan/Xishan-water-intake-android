@@ -12,7 +12,7 @@
           <view class="file-img">
             <image src="../../static/public/txt@2x.png"/>
           </view>
-          <view class="file-name" @click="previewFile(true)">江苏省水利厅文件</view>
+          <view class="file-name" @click="previewFile(false)">江苏省水利厅文件</view>
         </view>
         <view class="info4-box">
           <view class="info4-box-title">文件及归档材料：</view>
@@ -52,38 +52,38 @@ export default {
     return {
       isShow: false,
       fileData: [
-        {
-          id: '01',
-          t1: '2021',
-          t2: '测试报告.txt',
-          t3: '测试报告.txt',
-          t4: '测试报告.txt',
-          isShow: false
-        },
-        {
-          id: '02',
-          t1: '2021',
-          t2: '测试报告.txt',
-          t3: '测试报告.txt',
-          t4: '测试报告.txt',
-          isShow: true
-        },
-        {
-          id: '03',
-          t1: '2021',
-          t2: '测试报告.txt',
-          t3: '测试报告.txt',
-          t4: '测试报告.txt',
-          isShow: false
-        },
-        {
-          id: '04',
-          t1: '2021',
-          t2: '测试报告.txt',
-          t3: '测试报告.txt',
-          t4: '测试报告.txt',
-          isShow: true
-        },
+        // {
+        //   id: '01',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   t3: '测试报告.txt',
+        //   t4: '测试报告.txt',
+        //   isShow: false
+        // },
+        // {
+        //   id: '02',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   t3: '测试报告.txt',
+        //   t4: '测试报告.txt',
+        //   isShow: true
+        // },
+        // {
+        //   id: '03',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   t3: '测试报告.txt',
+        //   t4: '测试报告.txt',
+        //   isShow: false
+        // },
+        // {
+        //   id: '04',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   t3: '测试报告.txt',
+        //   t4: '测试报告.txt',
+        //   isShow: true
+        // },
       ]
     }
   },

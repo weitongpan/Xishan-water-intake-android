@@ -22,7 +22,7 @@
           </view>
           <view class="table-r-file">
             <image src="../../static/public/txt@2x.png"/>
-            <text @click="previewFile(true)">节水评价.txt</text>
+            <text @click="previewFile(false)">节水评价.txt</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-02</text>

@@ -48,36 +48,36 @@ export default {
     return {
       isShow: false,
       fileData: [
-        {
-          id: '01',
-          t1: '2021',
-          t2: '测试报告.txt',
-          isShow: false
-        },
-        {
-          id: '02',
-          t1: '2021',
-          t2: '测试报告.txt',
-          isShow: true
-        },
-        {
-          id: '03',
-          t1: '2021',
-          t2: '测试报告.txt',
-          isShow: true
-        },
-        {
-          id: '04',
-          t1: '2021',
-          t2: '测试报告.txt',
-          isShow: false
-        },
-        {
-          id: '05',
-          t1: '2021',
-          t2: '测试报告.txt',
-          isShow: false
-        }
+        // {
+        //   id: '01',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   isShow: false
+        // },
+        // {
+        //   id: '02',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   isShow: true
+        // },
+        // {
+        //   id: '03',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   isShow: true
+        // },
+        // {
+        //   id: '04',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   isShow: false
+        // },
+        // {
+        //   id: '05',
+        //   t1: '2021',
+        //   t2: '测试报告.txt',
+        //   isShow: false
+        // }
       ]
     }
   },

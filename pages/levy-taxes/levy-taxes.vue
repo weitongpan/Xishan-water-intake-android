@@ -25,7 +25,7 @@
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">取水权人：</text>
-            <text class="info2-box-left-r-content">南国红豆控股有限公司</text>
+            <text class="info2-box-left-r-content"></text>
           </view>
           <view class="info2-box-right">
           </view>
@@ -33,21 +33,21 @@
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">取水许可证编号：</text>
-            <text class="info2-box-left-r-content">9194583920028330589D</text>
+            <text class="info2-box-left-r-content"></text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">许可证年取水量(万m3/年)：</text>
-            <text class="info2-box-right-content">200</text>
+            <text class="info2-box-right-content"></text>
           </view>
         </view>
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">水源类型：</text>
-            <text class="info2-box-left-r-content">地表水</text>
+            <text class="info2-box-left-r-content"></text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">当年计划取水量(万m3)：</text>
-            <text class="info2-box-right-content">0</text>
+            <text class="info2-box-right-content"></text>
           </view>
         </view>
         <view class="controller-box">
@@ -64,36 +64,18 @@
             <text>本月抄表数</text>
             <text>本月取水量</text>
           </view>
-          <view class="table-r">
-            <text>1月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-          </view>
-          <view class="table-r">
-            <text>2月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-          </view>
-          <view class="table-r">
-            <text>3月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-          </view>
-          <view class="table-r">
-            <text>4月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-          </view>
-          <view class="table-r">
-            <text>5月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-          </view>
+<!--          <view class="table-r">-->
+<!--            <text>1月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>2月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--          </view>-->
         </view>
         <view class="table-box" v-if="controllerNumber === 1">
           <view class="table-r table-head">
@@ -104,54 +86,14 @@
             <text>累计应收费用</text>
             <text>累计实收费用</text>
           </view>
-          <view class="table-r">
-            <text>1月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>2月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>3月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>4月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>5月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>6月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
+<!--          <view class="table-r">-->
+<!--            <text>1月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
         </view>
         <view class="table-box" v-if="controllerNumber === 2">
           <view class="table-r table-head">
@@ -162,54 +104,54 @@
             <text>累计应收费用</text>
             <text>累计实收费用</text>
           </view>
-          <view class="table-r">
-            <text>1月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>2月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>3月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>4月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>5月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
-          <view class="table-r">
-            <text>6月</text>
-            <text>0.3</text>
-            <text>0.00</text>
-            <text>0</text>
-            <text>0.00</text>
-            <text>0.00</text>
-          </view>
+<!--          <view class="table-r">-->
+<!--            <text>1月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>2月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>3月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>4月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>5月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
+<!--          <view class="table-r">-->
+<!--            <text>6月</text>-->
+<!--            <text>0.3</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0</text>-->
+<!--            <text>0.00</text>-->
+<!--            <text>0.00</text>-->
+<!--          </view>-->
         </view>
       </view>
     </view>
