@@ -8,27 +8,26 @@
       <view class="title-text">
         锡山区取水分户归档台账自助查询终端
       </view>
-      <view class="select-box">
-        <view class="left">取水许可证号</view>
-        <veiw class="right">
-          <view class="right-top">
-            <view class="right-top-text">
-              9194583920028330589D
-            </view>
-            <view class="image-box" @click="selectClick">
-              <image v-show="!isShow" src="../../static/index/xiala@2x.png"></image>
-              <image v-show="isShow" src="../../static/index/shouqi@2x.png"></image>
-            </view>
-          </view>
-          <view v-show="isShow"
-              class="right-bottom"
-          >
-            <view>9194583920028330589D</view>
-            <view>9194583920028330589D</view>
-            <view>9194583920028330589D</view>
-          </view>
-        </veiw>
-      </view>
+<!--      <view class="select-box">-->
+<!--        <view class="left">取水许可证号</view>-->
+<!--        <view class="right">-->
+<!--          <view class="right-top">-->
+<!--            <view class="right-top-text">-->
+<!--              9194583920028330589D-->
+<!--            </view>-->
+<!--            <view class="image-box" @click="selectClick">-->
+<!--              <image v-show="!isShow" src="../../static/index/xiala@2x.png"></image>-->
+<!--              <image v-show="isShow" src="../../static/index/shouqi@2x.png"></image>-->
+<!--            </view>-->
+<!--          </view>-->
+<!--          <view v-show="isShow"-->
+<!--              class="right-bottom"-->
+<!--          >-->
+<!--            <view>9194583920028330589D</view>-->
+<!--            <view>9194583920028330589D</view>-->
+<!--          </view>-->
+<!--        </view>-->
+<!--      </view>-->
     </view>
     <view class="content">
       <view class="nav-row">
@@ -74,11 +73,12 @@
 </template>
 
 <script>
+import data from '../../data/data'
 	export default {
 		data() {
 			return {
+        isShow: false,
 			  time: {
-          isShow: false,
           day: '',
           hour: ''
         }
@@ -86,8 +86,13 @@
 		},
 		onLoad() {
       this.getDateData()
-		},
+      this.setFictitiousData()
+    },
+
 		methods: {
+		  setFictitiousData() {
+        this.$store.commit('SET_DATA', data.data1)
+      },
       selectClick() {
         this.isShow = !this.isShow
       },

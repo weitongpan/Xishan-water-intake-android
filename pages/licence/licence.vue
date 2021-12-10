@@ -8,66 +8,66 @@
           <view class="info1-box-left">
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">取水许可证号：</text>
-              <text class="info1-box-left-r-content">D320205S2021-0003</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.permit.number }}</text>
             </view>
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">起始日期：</text>
-              <text class="info1-box-left-r-content">2026-07-06</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.permit.stratTime }}</text>
             </view>
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">有效日期：</text>
-              <text class="info1-box-left-r-content">2026-07-06</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.permit.endTime }}</text>
             </view>
           </view>
           <view class="info1-box-right">
             <view class="info1-box-right-title">取水许可证首页：</view>
             <view class="info1-box-right-img">
-              <image src="../../static/basic-information/bz@2x.png" @click="viewPicture('../../static/basic-information/bz@2x.png')"></image>
+              <image :src="fictitiousData.permit.imgUrl" @click="viewPicture(fictitiousData.permit.imgUrl)"></image>
             </view>
           </view>
         </view>
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">水源类型：</text>
-            <text class="info2-box-left-r-content">地下水</text>
+            <text class="info2-box-left-r-content">{{ fictitiousData.permit.type }}</text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">年允许取水量(万m³/年)：</text>
-            <text class="info2-box-right-content">200</text>
+            <text class="info2-box-right-content">{{ fictitiousData.permit.waterIntake }}</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">允许日最大取水量（m³/天）：</text>
-            <text class="info3-box-left-r-content">5479.5</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.permit.waterIntakeDate }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">允许最大取水流量（m³/秒）：</text>
-            <text class="info3-box-right-r-content">0.063</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.permit.waterIntakeMax }}</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可申请表：</text>
-            <text class="info3-box-left-r-content file" @click="previewFile(true)">申请文件.txt</text>
-            <text class="info3-box-left-r-content">2020-09-10</text>
+            <text class="info3-box-left-r-content file" @click="previewFile(false)"></text>
+            <text class="info3-box-left-r-content"></text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可批复文件：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile(false)">复印件文件.pdf</text>
+            <text class="info3-box-right-r-content file" @click="previewFile(false)">{{ fictitiousData.permit.pafName }}</text>
             <text class="info3-box-right-r-content">2020-09-10</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可登记表：</text>
-            <text class="info3-box-left-r-content file" @click="previewFile(true)">登记文件.txt</text>
-            <text class="info3-box-left-r-content">2020-09-10</text>
+            <text class="info3-box-left-r-content file" @click="previewFile(true)"></text>
+            <text class="info3-box-left-r-content"></text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可证：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile(false)">许可证.png</text>
-            <text class="info3-box-right-r-content">2020-09-10</text>
+            <text class="info3-box-right-r-content file" @click="previewFile(false)"></text>
+            <text class="info3-box-right-r-content"></text>
           </view>
         </view>
         <view class="info4-box">
@@ -80,41 +80,13 @@
               <text>延续取水评估表</text>
               <text>延续取水决定书</text>
             </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-              <text>决定书1.txt</text>
-            </view>
-            <view class="table-body">
-              <text>02</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-              <text>决定书1.txt</text>
-            </view>
-            <view class="table-body">
-              <text>03</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-              <text>决定书1.txt</text>
-            </view>
-            <view class="table-body">
-              <text>03</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-              <text>决定书1.txt</text>
-            </view>
-            <view class="table-body">
-              <text>03</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-              <text>决定书1.txt</text>
-            </view>
+<!--            <view class="table-body">-->
+<!--              <text>01</text>-->
+<!--              <text>2021</text>-->
+<!--              <text>申请表1.txt</text>-->
+<!--              <text>评估表1.txt</text>-->
+<!--              <text>决定书1.txt</text>-->
+<!--            </view>-->
           </view>
         </view>
       </view>
@@ -127,6 +99,7 @@
 
 <script>
 import topNav from '../../components/nav/topNav'
+import { mapState } from 'vuex'
 export default {
   components: {
     topNav
@@ -135,6 +108,9 @@ export default {
     return {
       isShow: false
     }
+  },
+  computed: {
+    ...mapState(['fictitiousData'])
   },
   methods: {
     previewFile(isShow) {

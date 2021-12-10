@@ -7,7 +7,7 @@
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水口：</text>
-            <text class="info3-box-left-r-content">68</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.waterIntake }}</text>
           </view>
           <view class="info3-box-right">
           </view>
@@ -15,11 +15,11 @@
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水口经度：</text>
-            <text class="info3-box-left-r-content">1</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.longitude }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水口纬度：</text>
-            <text class="info3-box-right-r-content">1</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.latitude }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
@@ -28,7 +28,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
+              <image src=""></image>
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -36,38 +36,38 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
+              <image src=""></image>
             </view>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水地点：</text>
-            <text class="info3-box-left-r-content">锡山市东港镇红豆工业园区</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.address }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">水资源分区：</text>
-            <text class="info3-box-right-r-content">1</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.classification }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">水源类型：</text>
-            <text class="info3-box-left-r-content">地表水</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.type }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水设施类型：</text>
-            <text class="info3-box-right-r-content">水泵</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.facilities }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">水泵设计扬程（单位m)：</text>
-            <text class="info3-box-left-r-content">0.063</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.lift }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">日最大取水能力（单位m³/d)：</text>
-            <text class="info3-box-right-r-content">5479.5</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.ability }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
@@ -77,76 +77,66 @@
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="previewFile(true)">取水工程（设施）验收报告</text>
+            <text class="info3-box-right-r-content report" @click="previewFile(false)">取水工程（设施）验收报告</text>
           </view>
         </view>
-        <view class="x-r info3-box">
-          <view class="info3-box-left">
-            <text class="info3-box-left-r-title">水井数量：</text>
-            <text class="info3-box-left-r-content">2</text>
+        <view v-if="fictitiousData.monitor.number && fictitiousData.monitor.number > 0">
+          <view class="x-r info3-box">
+            <view class="info3-box-left">
+              <text class="info3-box-left-r-title">水井数量：</text>
+              <text class="info3-box-left-r-content">{{ fictitiousData.monitor.number }}</text>
+            </view>
+            <view class="info3-box-right">
+              <text class="info3-box-right-r-title">日最大取水能力（单位m³/d)：</text>
+              <text class="info3-box-right-r-content">{{ fictitiousData.monitor.ability }}</text>
+            </view>
           </view>
-          <view class="info3-box-right">
-            <text class="info3-box-right-r-title">日最大取水能力（单位m³/d)：</text>
-            <text class="info3-box-right-r-content">5479.5</text>
-          </view>
-        </view>
-        <view class="x-r info4-box">
-          <view class="info4-box-title">水井：</view>
-          <view class="info4-box-table">
-            <view class="table-head">
-              <text>#</text>
-              <text>开采层位</text>
-              <text>井深（m)</text>
-              <text>井径（cm）</text>
-            </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>第2层</text>
-              <text>13</text>
-              <text>109</text>
-            </view>
-            <view class="table-body">
-              <text>02</text>
-              <text>第2层</text>
-              <text>12</text>
-              <text>180</text>
-            </view>
-            <view class="table-body">
-              <text>03</text>
-              <text>第2层</text>
-              <text>12</text>
-              <text>180</text>
+          <view class="x-r info4-box">
+            <view class="info4-box-title">水井：</view>
+            <view class="info4-box-table">
+              <view class="table-head">
+                <text>#</text>
+                <text>开采层位</text>
+                <text>井深（m)</text>
+                <text>井径（cm）</text>
+              </view>
+              <view class="table-body" v-for="(item, index) in fictitiousData.monitor.well">
+                <text>{{ index }}</text>
+                <text>{{ item.layer }}</text>
+                <text>{{ item.wellDepth }}</text>
+                <text>{{ item.wellDiameter }}</text>
+              </view>
             </view>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">计量设备类型：</text>
-            <text class="info3-box-left-r-content">水表</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.metering }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">计量内容：</text>
-            <text class="info3-box-right-r-content">流量</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.meteringConten }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">计量方式：</text>
-            <text class="info3-box-left-r-content">管道计量</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.meteringMode }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">数据传输方式：</text>
-            <text class="info3-box-right-r-content">在线</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.dataMode }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">计量设施检验合格日期：</text>
-            <text class="info3-box-left-r-content">2021-10-01</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.monitor.meteringTime }}</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">检定校准要求：</text>
-            <text class="info3-box-right-r-content">1</text>
+            <text class="info3-box-right-r-content">{{ fictitiousData.monitor.requirement }}</text>
           </view>
         </view>
         <view class="x-r info3-box">
@@ -155,7 +145,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
+              <image></image>
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -163,7 +153,7 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-              <image src="../../static/public/occupation_bitmap.png" @click="viewPicture('../../static/public/occupation_bitmap.png')"></image>
+              <image></image>
             </view>
           </view>
         </view>
@@ -174,7 +164,7 @@
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="previewFile(true)">计量设施检验报告</text>
+            <text class="info3-box-right-r-content report" @click="previewFile(false)">计量设施检验报告</text>
           </view>
         </view>
         <view class="x-r info4-box">
@@ -186,24 +176,12 @@
               <text>填报日期</text>
               <text>填报人</text>
             </view>
-            <view class="table-body">
-              <text>01</text>
-              <text>设施状态略</text>
-              <text>2020-09-21</text>
-              <text>孙小姐</text>
-            </view>
-            <view class="table-body">
-              <text>02</text>
-              <text>设施状态略</text>
-              <text>2020-09-21</text>
-              <text>孙小姐</text>
-            </view>
-            <view class="table-body">
-              <text>03</text>
-              <text>2021</text>
-              <text>申请表1.txt</text>
-              <text>评估表1.txt</text>
-            </view>
+<!--            <view class="table-body">-->
+<!--              <text>01</text>-->
+<!--              <text>设施状态略</text>-->
+<!--              <text>2020-09-21</text>-->
+<!--              <text>孙小姐</text>-->
+<!--            </view>-->
           </view>
         </view>
       </view>
@@ -216,6 +194,7 @@
 
 <script>
 import topNav from '../../components/nav/topNav'
+import { mapState } from 'vuex'
 export default {
   components: {
     topNav
@@ -224,6 +203,9 @@ export default {
     return {
       isShow: false
     }
+  },
+  computed: {
+    ...mapState(['fictitiousData'])
   },
   methods: {
     previewFile(isShow) {

@@ -8,38 +8,38 @@
           <view class="info1-box-left">
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">单位名称：</text>
-              <text class="info1-box-left-r-content">南国红豆控股有限公司</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.basicInformation.name }}</text>
             </view>
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">统一社会信用代码：</text>
-              <text class="info1-box-left-r-content">9194583920028330589D</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.basicInformation.unifiedAuthentication }}</text>
             </view>
             <view class="info1-box-left-r">
               <text class="info1-box-left-r-title">法定代表人：</text>
-              <text class="info1-box-left-r-content">周明江</text>
+              <text class="info1-box-left-r-content">{{ fictitiousData.basicInformation.representative }}</text>
             </view>
           </view>
           <view class="info1-box-right">
             <view class="info1-box-right-title">营业执照：</view>
             <view class="info1-box-right-img">
-              <image src="../../static/basic-information/bz@2x.png" @click="viewPicture('../../static/basic-information/bz@2x.png')"></image>
+              <image src=""></image>
             </view>
           </view>
         </view>
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">所属镇/街道：</text>
-            <text class="info2-box-left-r-content">东港镇</text>
+            <text class="info2-box-left-r-content">{{ fictitiousData.basicInformation.street }}</text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">住所（地址）：</text>
-            <text class="info2-box-right-content">锡山市东港镇红豆工业园区</text>
+            <text class="info2-box-right-content">{{ fictitiousData.basicInformation.address }}</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">行业类别：</text>
-            <text class="info3-box-left-r-content">电力生产</text>
+            <text class="info3-box-left-r-content">{{ fictitiousData.basicInformation.category }}</text>
           </view>
           <view class="info3-box-right">
           </view>
@@ -54,29 +54,29 @@
               <text>行业用水定额</text>
               <text>实际用水定额</text>
             </view>
-            <view class="table-body" v-for="item in mainProductsData.slice(0, 3)">
-              <text>{{ item.id }}</text>
-              <text>{{ item.t1 }}</text>
-              <text>{{ item.t2 }}</text>
-              <text>{{ item.t3 }}</text>
-              <text>{{ item.t4 }}</text>
+            <view class="table-body" v-for="(item, index) in fictitiousData.basicInformation.mainProducts.slice(0, 3)">
+              <text>{{ index }}</text>
+              <text>{{ item.type }}</text>
+              <text>{{ item.annualOutput }}</text>
+              <text>{{ item.quota }}</text>
+              <text>{{ item.actualQuota }}</text>
             </view>
           </view>
         </view>
         <view class="info5-box">
           <view class="info5-box-left">
             <text class="info5-box-left-r-title">取水用途：</text>
-            <text class="info5-box-left-r-content">工业用水</text>
+            <text class="info5-box-left-r-content">{{ fictitiousData.basicInformation.purpose }}</text>
           </view>
           <view class="info5-box-right">
             <text class="info5-box-right-title">单位荣誉：</text>
-            <text class="info5-box-right-content">区节水型企业</text>
+            <text class="info5-box-right-content">{{ fictitiousData.basicInformation.honor }}</text>
           </view>
         </view>
         <view class="info5-box">
           <view class="info5-box-left">
             <text class="info5-box-left-r-title">水务经理：</text>
-            <text class="info5-box-left-r-content">陈玲燕</text>
+            <text class="info5-box-left-r-content">{{ fictitiousData.basicInformation.manager }}</text>
           </view>
           <view class="info5-box-right">
           </view>
@@ -84,11 +84,11 @@
         <view class="info5-box">
           <view class="info5-box-left">
             <text class="info5-box-left-r-title">联系电话1：</text>
-            <text class="info5-box-left-r-content">18273849871</text>
+            <text class="info5-box-left-r-content">{{ fictitiousData.basicInformation.iphone1 }}</text>
           </view>
           <view class="info5-box-right">
             <text class="info5-box-right-title">联系电话2：</text>
-            <text class="info5-box-right-content">17082739018</text>
+            <text class="info5-box-right-content"></text>
           </view>
         </view>
       </view>
@@ -98,42 +98,16 @@
 
 <script>
 import topNav from '../../components/nav/topNav'
+import { mapState } from 'vuex'
 	export default {
     components: {
       topNav
     },
+    computed: {
+      ...mapState(['fictitiousData'])
+    },
 		data() {
 			return {
-        mainProductsData: [
-          {
-            id: '01',
-            t1: '电力生产',
-            t2: '19000000000Kwh',
-            t3: '1.85m³/Mwh',
-            t4: '1.78m³/Mwh'
-          },
-          {
-            id: '02',
-            t1: '电力生产',
-            t2: '19000000000Kwh',
-            t3: '1.85m³/Mwh',
-            t4: '1.78m³/Mwh'
-          },
-          {
-            id: '03',
-            t1: '电力生产',
-            t2: '19000000000Kwh',
-            t3: '1.85m³/Mwh',
-            t4: '1.78m³/Mwh'
-          },
-          {
-            id: '04',
-            t1: '电力生产',
-            t2: '19000000000Kwh',
-            t3: '1.85m³/Mwh',
-            t4: '1.78m³/Mwh'
-          }
-        ]
 			}
 		},
     methods: {
