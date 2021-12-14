@@ -6,7 +6,7 @@
         <view class="title">水权交易</view>
         <view class="table-r">
           <view class="table-r-title">
-            <text @click="previewFile(false)">1、取水权交易表</text>
+            <text @click="previewFile(false)">1、取水权申请表</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-10</text>
