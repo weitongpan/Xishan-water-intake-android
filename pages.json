@@ -110,6 +110,15 @@
             }
 
         }
+        ,{
+            "path" : "pages/sign_in/sign_in",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

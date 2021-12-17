@@ -10,7 +10,7 @@
       </view>
       <view class="select-box">
         <view class="left">取水许可证号</view>
-        <veiw class="right">
+        <view class="right">
           <view class="right-top">
             <view class="right-top-text">
               9194583920028330589D
@@ -27,7 +27,7 @@
             <view>9194583920028330589D</view>
             <view>9194583920028330589D</view>
           </view>
-        </veiw>
+        </view>
       </view>
     </view>
     <view class="content">
@@ -77,8 +77,8 @@
 	export default {
 		data() {
 			return {
+        isShow: false,
 			  time: {
-          isShow: false,
           day: '',
           hour: ''
         }
@@ -117,7 +117,7 @@
           this.time.day = `${month}.${date} ${day}`
           this.time.hour = `${hours}:${minutes}:${seconds}`
         }, 1000)
-      },
+      }
 		}
 	}
 </script>
