@@ -18,10 +18,10 @@
             <text class="r-number">{{ item.id }}</text>
             <text>{{ item.t1 }}</text>
             <text>{{ item.t2 }}</text>
-            <text @click="previewFile(item.isShow)">{{ item.t3 }}</text>
-            <text @click="previewFile(item.isShow)">{{ item.t4 }}</text>
-            <text @click="previewFile(item.isShow)">{{ item.t5 }}</text>
-            <text @click="previewFile(item.isShow)">{{ item.t6 }}</text>
+            <text @click="viewPicture(item.t3Url)">{{ item.t3 }}</text>
+            <text @click="viewPicture(item.t4Url)">{{ item.t4 }}</text>
+            <text>{{ item.t5 }}</text>
+            <text>{{ item.t6 }}</text>
           </view>
         </view>
       </view>
@@ -43,36 +43,39 @@ export default {
     return {
       isShow: false,
       fileData: [
-        // {
-        //   id: '01',
-        //   t1: '2021',
-        //   t2: '6803',
-        //   t3: '申请表.txt',
-        //   t4: '文件.txt',
-        //   t5: '申请表.txt',
-        //   t6: '文件.txt',
-        //   isShow: false
-        // },
-        // {
-        //   id: '02',
-        //   t1: '2021',
-        //   t2: '6803',
-        //   t3: '申请表.txt',
-        //   t4: '文件.txt',
-        //   t5: '申请表.txt',
-        //   t6: '文件.txt',
-        //   isShow: true
-        // },
-        // {
-        //   id: '03',
-        //   t1: '2021',
-        //   t2: '6803',
-        //   t3: '申请表.txt',
-        //   t4: '文件.txt',
-        //   t5: '申请表.txt',
-        //   t6: '文件.txt',
-        //   isShow: true
-        // },
+        {
+          id: '01',
+          t1: '2021',
+          t2: '200',
+          t3: '申请表.txt',
+          t3Url: '../../static/file/d1/jhsq1.pdf',
+          t4: '下达文件.pdf',
+          t4Url: '../../static/file/d1/jhxd1.pdf',
+          t5: '',
+          t6: '',
+        },
+        {
+          id: '02',
+          t1: '2020',
+          t2: '200',
+          t3: '申请表.txt',
+          t3Url: '../../static/file/d1/jhsq2.pdf',
+          t4: '下达文件.pdf',
+          t4Url: '../../static/file/d1/jhxd2.pdf',
+          t5: '',
+          t6: '',
+        },
+        {
+          id: '03',
+          t1: '2019',
+          t2: '200',
+          t3: '',
+          t3Url: '',
+          t4: '下达文件.pdf',
+          t4Url: '../../static/file/d1/jhxd3.pdf',
+          t5: '',
+          t6: '',
+        },
         // {
         //   id: '04',
         //   t1: '2021',
@@ -97,6 +100,11 @@ export default {
     }
   },
   methods: {
+    viewPicture(path) {
+      uni.openDocument({
+        filePath: path
+      })
+    },
     previewFile(isShow) {
       if (isShow) {
         uni.navigateTo({

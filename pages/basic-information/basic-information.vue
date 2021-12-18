@@ -22,7 +22,7 @@
           <view class="info1-box-right">
             <view class="info1-box-right-title">营业执照：</view>
             <view class="info1-box-right-img">
-              <image src=""></image>
+              <image :src="fictitiousData.basicInformation.imgUrl" @click="viewPicture(fictitiousData.basicInformation.imgUrl)"></image>
             </view>
           </view>
         </view>

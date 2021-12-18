@@ -25,7 +25,7 @@
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">取水权人：</text>
-            <text class="info2-box-left-r-content"></text>
+            <text class="info2-box-left-r-content">无锡锡东环保能源有限公司</text>
           </view>
           <view class="info2-box-right">
           </view>
@@ -33,21 +33,21 @@
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">取水许可证编号：</text>
-            <text class="info2-box-left-r-content"></text>
+            <text class="info2-box-left-r-content"> D320205S2021-0050</text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">许可证年取水量(万m3/年)：</text>
-            <text class="info2-box-right-content"></text>
+            <text class="info2-box-right-content">240.9</text>
           </view>
         </view>
         <view class="info2-box">
           <view class="info2-box-left">
             <text class="info2-box-left-r-title">水源类型：</text>
-            <text class="info2-box-left-r-content"></text>
+            <text class="info2-box-left-r-content">地表水</text>
           </view>
           <view class="info2-box-right">
             <text class="info2-box-right-title">当年计划取水量(万m3)：</text>
-            <text class="info2-box-right-content"></text>
+            <text class="info2-box-right-content">200</text>
           </view>
         </view>
         <view class="controller-box">
@@ -64,18 +64,12 @@
             <text>本月抄表数</text>
             <text>本月取水量</text>
           </view>
-<!--          <view class="table-r">-->
-<!--            <text>1月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>2月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--          </view>-->
+          <view class="table-r" v-for="item in res.table1">
+            <text>{{ item.t1 }}</text>
+            <text>{{ item.t2 }}</text>
+            <text>{{ item.t3 }}</text>
+            <text>{{ item.t4 }}</text>
+          </view>
         </view>
         <view class="table-box" v-if="controllerNumber === 1">
           <view class="table-r table-head">
@@ -86,14 +80,14 @@
             <text>累计应收费用</text>
             <text>累计实收费用</text>
           </view>
-<!--          <view class="table-r">-->
-<!--            <text>1月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
+          <view class="table-r" v-for="item in res.table2">
+            <text>{{ item.t1 }}</text>
+            <text>{{ item.t2 }}</text>
+            <text>{{ item.t3 }}</text>
+            <text>{{ item.t4 }}</text>
+            <text>{{ item.t5 }}</text>
+            <text>{{ item.t6 }}</text>
+          </view>
         </view>
         <view class="table-box" v-if="controllerNumber === 2">
           <view class="table-r table-head">
@@ -104,54 +98,14 @@
             <text>累计应收费用</text>
             <text>累计实收费用</text>
           </view>
-<!--          <view class="table-r">-->
-<!--            <text>1月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>2月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>3月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>4月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>5月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
-<!--          <view class="table-r">-->
-<!--            <text>6月</text>-->
-<!--            <text>0.3</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0</text>-->
-<!--            <text>0.00</text>-->
-<!--            <text>0.00</text>-->
-<!--          </view>-->
+          <view class="table-r" v-for="item in res.table3">
+            <text>{{ item.t1 }}</text>
+            <text>{{ item.t2 }}</text>
+            <text>{{ item.t3 }}</text>
+            <text>{{ item.t4 }}</text>
+            <text>{{ item.t5 }}</text>
+            <text>{{ item.t6 }}</text>
+          </view>
         </view>
       </view>
     </view>
@@ -170,7 +124,257 @@ export default {
       controllerNumber: 1,
       selectIsShow: false,
       year: '2021',
-      yearArray: [2021, 2019, 2018, 2017, 2016]
+      yearArray: [2021, 2019, 2018, 2017, 2016],
+      res: {
+        table1: [
+          {
+            t1: '1月',
+            t2: '5080343',
+            t3: '5177427',
+            t4: '97084',
+          },
+          {
+            t1: '2月',
+            t2: '5177427',
+            t3: '5307184',
+            t4: '129757',
+          },
+          {
+            t1: '3月',
+            t2: '5307184',
+            t3: '5464740',
+            t4: '157556',
+          },
+          {
+            t1: '4月',
+            t2: '5464740',
+            t3: '5631211',
+            t4: '166471',
+          },
+          {
+            t1: '5月',
+            t2: '5631211',
+            t3: '5756345',
+            t4: '125134',
+          },
+          {
+            t1: '6月',
+            t2: '5756345',
+            t3: '5894844',
+            t4: '138499',
+          },
+          {
+            t1: '7月',
+            t2: '5894844',
+            t3: '6033290',
+            t4: '138446',
+          },
+          {
+            t1: '8月',
+            t2: '6033290',
+            t3: '6182374',
+            t4: '149084',
+          },
+          {
+            t1: '9月',
+            t2: '6182374',
+            t3: '6321141',
+            t4: '138767',
+          },
+          {
+            t1: '10月',
+            t2: '6321141',
+            t3: '6445039',
+            t4: '123898',
+          },
+          {
+            t1: '11月',
+            t2: '6445039',
+            t3: '6564004',
+            t4: '118965',
+          }
+        ],
+        table2: [
+          {
+            t1: '1月',
+            t2: '0.3',
+            t3: '29125.2',
+            t4: '29125.2',
+            t5: '29125.2',
+            t6: '29125.2'
+          },
+          {
+            t1: '2月',
+            t2: '0.3',
+            t3: '38927.1',
+            t4: '38927.1',
+            t5: '68052.3',
+            t6: '68052.3',
+          },
+          {
+            t1: '3月',
+            t2: '0.3',
+            t3: '27266.8',
+            t4: '27266.8',
+            t5: '115319.1',
+            t6: '115319.1',
+          },
+          {
+            t1: '4月',
+            t2: '0.3',
+            t3: '49941.3',
+            t4: '49941.3',
+            t5: '165260.4',
+            t6: '165260.4',
+          },
+          {
+            t1: '5月',
+            t2: '0.3',
+            t3: '37540.2',
+            t4: '37540.2',
+            t5: '202800.6',
+            t6: '202800.6'
+          },
+          {
+            t1: '6月',
+            t2: '0.3',
+            t3: '41549.7',
+            t4: '41549.7',
+            t5: '244350.3',
+            t6: '244350.3',
+          },
+          {
+            t1: '7月',
+            t2: '0.3',
+            t3: '41533.8',
+            t4: '41533.8',
+            t5: '285884.1',
+            t6: '285884.1',
+          },
+          {
+            t1: '8月',
+            t2: '0.3',
+            t3: '44725.2',
+            t4: '44725.2',
+            t5: '330609.3',
+            t6: '330609.3',
+          },
+          {
+            t1: '9月',
+            t2: '0.3',
+            t3: '41630.1',
+            t4: '41630.1',
+            t5: '372239.4',
+            t6: '372239.4'
+          },
+          {
+            t1: '10月',
+            t2: '0.3',
+            t3: '37169.4',
+            t4: '37169.4',
+            t5: '409408.8',
+            t6: '409408.8'
+          },
+          {
+            t1: '11月',
+            t2: '0.3',
+            t3: '35689.5',
+            t4: '35689.5',
+            t5: '445098.3',
+            t6: '445098.3'
+          }
+        ],
+        table3: [
+          {
+            t1: '1月',
+            t2: '0.09',
+            t3: '8737.56',
+            t4: '8737.56',
+            t5: '8737.56',
+            t6: '8737.56'
+          },
+          {
+            t1: '2月',
+            t2: '0.09',
+            t3: '11678.13',
+            t4: '11678.13',
+            t5: '20415.69',
+            t6: '20415.69',
+          },
+          {
+            t1: '3月',
+            t2: '0.09',
+            t3: '14180.04',
+            t4: '14180.04',
+            t5: '34595.73',
+            t6: '34595.73',
+          },
+          {
+            t1: '4月',
+            t2: '0.09',
+            t3: '14982.39',
+            t4: '14982.39',
+            t5: '49578.32',
+            t6: '49578.32',
+          },
+          {
+            t1: '5月',
+            t2: '0.09',
+            t3: '11262.02',
+            t4: '11262.02',
+            t5: '60840.18',
+            t6: '60840.18'
+          },
+          {
+            t1: '6月',
+            t2: '0.09',
+            t3: '12464.91',
+            t4: '12464.91',
+            t5: '73305.09',
+            t6: '73305.09',
+          },
+          {
+            t1: '7月',
+            t2: '0.09',
+            t3: '12460.14',
+            t4: '12460.14',
+            t5: '85765.23',
+            t6: '85765.23',
+          },
+          {
+            t1: '8月',
+            t2: '0.09',
+            t3: '13417.56',
+            t4: '13417.56',
+            t5: '99182.79',
+            t6: '99182.79',
+          },
+          {
+            t1: '9月',
+            t2: '0.09',
+            t3: '12489.03',
+            t4: '12489.03',
+            t5: '111671.82',
+            t6: '111671.82'
+          },
+          {
+            t1: '10月',
+            t2: '0.09',
+            t3: '11150.82',
+            t4: '11150.82',
+            t5: '122822.64',
+            t6: '122822.64'
+          },
+          {
+            t1: '11月',
+            t2: '0.09',
+            t3: '10706.85',
+            t4: '10706.85',
+            t5: '133529.49',
+            t6: '133529.49'
+          }
+        ]
+      }
     }
   },
   methods: {

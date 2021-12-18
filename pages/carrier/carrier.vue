@@ -15,25 +15,25 @@
           <view class="file-name" @click="previewFile(false)">江苏省水利厅文件</view>
         </view>
         <view class="info4-box">
-          <view class="info4-box-title">文件及归档材料：</view>
-          <view class="info4-box-table">
-            <view class="table-head">
-              <text>#</text>
-              <text>申报年度</text>
-              <text>任务下达文件</text>
-              <text>创建成功文件</text>
-              <text>台账资料</text>
-              <text>复查情况</text>
-            </view>
-            <view class="table-body" v-for="item in fileData">
-              <text>{{ item.id }}</text>
-              <text>{{ item.t1 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t3 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t4 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t5 }}</text>
-            </view>
-          </view>
+<!--          <view class="info4-box-title">文件及归档材料：</view>-->
+<!--          <view class="info4-box-table">-->
+<!--            <view class="table-head">-->
+<!--              <text>#</text>-->
+<!--              <text>申报年度</text>-->
+<!--              <text>任务下达文件</text>-->
+<!--              <text>创建成功文件</text>-->
+<!--              <text>台账资料</text>-->
+<!--              <text>复查情况</text>-->
+<!--            </view>-->
+<!--            <view class="table-body" v-for="item in fileData">-->
+<!--              <text>{{ item.id }}</text>-->
+<!--              <text>{{ item.t1 }}</text>-->
+<!--              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>-->
+<!--              <text @click="previewFile(item.isShow)">{{ item.t3 }}</text>-->
+<!--              <text @click="previewFile(item.isShow)">{{ item.t4 }}</text>-->
+<!--              <text @click="previewFile(item.isShow)">{{ item.t5 }}</text>-->
+<!--            </view>-->
+<!--          </view>-->
         </view>
       </view>
     </view>

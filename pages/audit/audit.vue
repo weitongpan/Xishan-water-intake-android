@@ -27,9 +27,9 @@
             <view class="table-body" v-for="item in fileData">
               <text>{{ item.id }}</text>
               <text>{{ item.t1 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t3 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t4 }}</text>
+              <text @click="viewPicture(item.t2Url)">{{ item.t2 }}</text>
+              <text @click="viewPicture(item.t3Url)">{{ item.t3 }}</text>
+              <text></text>
             </view>
 
           </view>
@@ -52,14 +52,14 @@ export default {
     return {
       isShow: false,
       fileData: [
-        // {
-        //   id: '01',
-        //   t1: '2021',
-        //   t2: '测试报告.txt',
-        //   t3: '测试报告.txt',
-        //   t4: '测试报告.txt',
-        //   isShow: false
-        // },
+        {
+          id: '01',
+          t1: '2021',
+          t2: '水审计报告.pdf',
+          t2Url: '../../static/file/d1/sjbg.pdf',
+          t3: '用水审计整改意见.pdf',
+          t3Url: '../../static/file/d1/sjzg.pdf'
+        },
         // {
         //   id: '02',
         //   t1: '2021',
@@ -88,6 +88,11 @@ export default {
     }
   },
   methods: {
+    viewPicture(path) {
+      uni.openDocument({
+        filePath: path
+      })
+    },
     previewFile(isShow) {
       if (isShow) {
         uni.navigateTo({

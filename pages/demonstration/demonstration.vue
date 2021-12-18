@@ -10,22 +10,10 @@
           </view>
           <view class="table-r-file">
             <image src="../../static/demonstration/pdf-2@2x.png"/>
-            <text @click="previewFile(false)">水资源论证报告.pdf</text>
+            <text @click="viewPicture('../../static/file/d1/szbg.pdf')">水资源论证报告.pdf</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-10</text>
-          </view>
-        </view>
-        <view class="table-r">
-          <view class="table-r-title">
-            <text>2、节水评价</text>
-          </view>
-          <view class="table-r-file">
-            <image src="../../static/public/txt@2x.png"/>
-            <text @click="previewFile(false)">节水评价.txt</text>
-          </view>
-          <view class="table-r-time">
-            <text>2021-09-02</text>
           </view>
         </view>
       </view>
@@ -48,6 +36,11 @@ export default {
     }
   },
   methods: {
+    viewPicture(path) {
+      uni.openDocument({
+        filePath: path
+      })
+    },
     previewFile(isShow) {
       if (isShow) {
         uni.navigateTo({

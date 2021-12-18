@@ -1,6 +1,7 @@
 const data1 = {
 	id: 'D320205S2021-0050',
 	basicInformation: {
+		imgUrl: '../../static/file/d1/yyzz.jpg',
 		name: '无锡锡东环保能源有限公司',
 		unifiedAuthentication: '91320205684910709J',
 		representative: '熊建平',
@@ -29,8 +30,12 @@ const data1 = {
 		waterIntakeDate: '510.0',
 		waterIntakeMax: '1.5600',
 		imgUrl: '../../static/file/d1/xkz.jpg',
-		pdfUrl: '../../static/file/d1/d1.pdf',
-		pafName: '取水证许可-锡东环保能源.pdf'
+		kfpPdfUrl: '../../static/file/d1/kpf.pdf',
+		kfpPafName: '取水许可批复文件.pdf',
+		djbPdfUrl: '../../static/file/d1/djb.pdf',
+		djbPafName: '取水许可登记表.pdf',
+		sqbPdfUrl: '../../static/file/d1/sqb.pdf',
+		sqbPafName: '取水许可申请表.pdf',
 	},
 	monitor: {
 		waterIntake: '47',

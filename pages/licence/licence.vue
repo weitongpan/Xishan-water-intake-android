@@ -49,44 +49,25 @@
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可申请表：</text>
-            <text class="info3-box-left-r-content file" @click="previewFile(false)"></text>
+            <text class="info3-box-left-r-content file" @click="viewPicture(fictitiousData.permit.sqbPdfUrl)">{{ fictitiousData.permit.sqbPafName }}</text>
             <text class="info3-box-left-r-content"></text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可批复文件：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile(false)">{{ fictitiousData.permit.pafName }}</text>
+            <text class="info3-box-right-r-content file" @click="viewPicture(fictitiousData.permit.kfpPdfUrl)">{{ fictitiousData.permit.kfpPafName }}</text>
             <text class="info3-box-right-r-content">2020-09-10</text>
           </view>
         </view>
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可登记表：</text>
-            <text class="info3-box-left-r-content file" @click="previewFile(true)"></text>
+            <text class="info3-box-left-r-content file" @click="viewPicture(fictitiousData.permit.djbPdfUrl)">{{ fictitiousData.permit.djbPafName }}</text>
             <text class="info3-box-left-r-content"></text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可证：</text>
             <text class="info3-box-right-r-content file" @click="previewFile(false)"></text>
             <text class="info3-box-right-r-content"></text>
-          </view>
-        </view>
-        <view class="info4-box">
-          <view class="info4-box-title">延续审批材料：</view>
-          <view class="info4-box-table">
-            <view class="table-head">
-              <text>#</text>
-              <text>年份</text>
-              <text>延续取水申请表</text>
-              <text>延续取水评估表</text>
-              <text>延续取水决定书</text>
-            </view>
-<!--            <view class="table-body">-->
-<!--              <text>01</text>-->
-<!--              <text>2021</text>-->
-<!--              <text>申请表1.txt</text>-->
-<!--              <text>评估表1.txt</text>-->
-<!--              <text>决定书1.txt</text>-->
-<!--            </view>-->
           </view>
         </view>
       </view>

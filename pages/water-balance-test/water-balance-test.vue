@@ -15,19 +15,19 @@
           <view class="file-name" @click="previewFile(false)">江苏省水利厅文件</view>
         </view>
         <view class="info4-box">
-          <view class="info4-box-title">文件及归档材料：</view>
-          <view class="info4-box-table">
-            <view class="table-head">
-              <text>#</text>
-              <text>归档年度</text>
-              <text>水平衡测试报告(表）</text>
-            </view>
-            <view class="table-body" v-for="item in fileData">
-              <text>{{ item.id }}</text>
-              <text>{{ item.t1 }}</text>
-              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>
-            </view>
-          </view>
+<!--          <view class="info4-box-title">文件及归档材料：</view>-->
+<!--          <view class="info4-box-table">-->
+<!--            <view class="table-head">-->
+<!--              <text>#</text>-->
+<!--              <text>归档年度</text>-->
+<!--              <text>水平衡测试报告(表）</text>-->
+<!--            </view>-->
+<!--            <view class="table-body" v-for="item in fileData">-->
+<!--              <text>{{ item.id }}</text>-->
+<!--              <text>{{ item.t1 }}</text>-->
+<!--              <text @click="previewFile(item.isShow)">{{ item.t2 }}</text>-->
+<!--            </view>-->
+<!--          </view>-->
         </view>
       </view>
     </view>
