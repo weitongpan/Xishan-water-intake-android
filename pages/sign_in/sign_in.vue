@@ -8,12 +8,42 @@
       <view class="title">锡山区取水分户归档台账自助查询终端</view>
     </view>
     <view class="form">
-      <view>
-
-        <input placeholder="请输入您的用户名">
+      <view class="top">
+        <image src="../../static/sign_in/logo.png"></image>
+        <text class="text">锡山取水管理系统</text>
       </view>
-      <view>
-        <input placeholder="请输入您的密码" :password="true">
+      <view class="form-item" hover-class="active">
+        <view class="input-box">
+          <view class="left">
+            <image src="../../static/sign_in/user.png"></image>
+            <image src="../../static/sign_in/line.png" class="line"></image>
+          </view>
+          <view class="middle">
+            <input placeholder="请输入您的用户名">
+          </view>
+          <view class="right">
+<!--            <image src="../../static/sign_in/show.png"></image>-->
+          </view>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="input-box">
+          <view class="left">
+            <image src="../../static/sign_in/suo.png"></image>
+            <image src="../../static/sign_in/line.png" class="line"></image>
+          </view>
+          <view class="middle">
+            <input placeholder="请输入您的密码" :password="!passwordIsShow">
+          </view>
+          <view class="right">
+            <image src="../../static/sign_in/show.png" v-if="passwordIsShow" @click="passShow"></image>
+            <image src="../../static/sign_in/hide.png" v-else  @click="passShow"></image>
+          </view>
+        </view>
+      </view>
+      <view class="tips">用户名或密码错误！</view>
+      <view class="sub">
+        <button>登 录</button>
       </view>
     </view>
 	</view>
@@ -26,13 +56,17 @@
         time: {
           day: '',
           hour: ''
-        }
+        },
+        passwordIsShow: false
 			}
 		},
     onLoad() {
       this.getDateData()
     },
 		methods: {
+      passShow() {
+        this.passwordIsShow = !this.passwordIsShow
+      },
       getDateData() {
         setInterval(() => {
           let dayArr = [
@@ -100,6 +134,106 @@
     background: #ffffff;
     border-radius: 20rpx;
     margin: 318rpx auto 0;
+    .top{
+      height: 144rpx;
+      line-height: 144rpx;
+      text-align: center;
+      padding-top: 54rpx;
+      margin-bottom: 108rpx;
+      image{
+        width: 160rpx;
+        height: 100%;
+      }
+      .text{
+        font-size: 50rpx;
+        font-family: PingFangSC, PingFangSC-Medium;
+        font-weight: 500;
+        font-weight: bold;
+        color: #262626;
+        position: relative;
+        top: -50rpx;
+      }
+    }
+    .form-item{
+      margin-top: 60rpx;
+      .input-box{
+        box-sizing: border-box;
+        line-height: 120rpx;
+        display: flex;
+        width: 880rpx;
+        height: 120rpx;
+        background: #ffffff;
+        border: 2rpx solid #cccccc;
+        border-radius: 12rpx;
+        margin: 0 auto;
+        image{
+          width: 60rpx;
+          height: 60rpx;
+        }
+        .left{
+          width: 10%;
+          position: relative;
+          padding-top: 20rpx;
+          margin-left: 30rpx;
+          .line{
+            width: 4rpx;
+            height: 60rpx;
+            position: absolute;
+            right: 0;
+            top: 30rpx;
+          }
+        }
+        .middle{
+          width: 80%;
+          margin-left: 40rpx;
+          input{
+            height: 100%;
+            font-size: 44rpx;
+          }
+        }
+        .right{
+          width: 10%;
+          padding-top: 20rpx;
+        }
+      }
+      .active{
+        border: 2rpx solid #0a63e6;
+      }
+      .input-box:focus{
+        border: 2rpx solid #0a63e6;
+      }
+    }
+    .tips{
+      width: 880rpx;
+      margin: 16rpx auto 0;
+
+
+      font-size: 36rpx;
+      font-family: PingFangSC, PingFangSC-Regular;
+      font-weight: 400;
+      text-align: left;
+      color: #ff3945;
+      line-height: 50rpx;
+    }
+    .sub{
+      margin: 54rpx auto 0;
+      width: 880rpx;
+      height: 132rpx;
+      button{
+        width: 100%;
+        height: 132rpx;
+        background: #0a63e6;
+        border-radius: 12rpx;
+        line-height: 132rpx;
+        color: #ffffff;
+        border: none;
+        font-size: 52rpx;
+        font-family: PingFangSC, PingFangSC-Medium;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
   }
 }
 
