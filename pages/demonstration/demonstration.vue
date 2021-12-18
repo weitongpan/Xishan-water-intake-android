@@ -10,7 +10,7 @@
           </view>
           <view class="table-r-file">
             <image src="../../static/demonstration/pdf-2@2x.png"/>
-            <text @click="viewPicture('../../static/file/d1/szbg.pdf')">水资源论证报告.pdf</text>
+            <text @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/szbg.pdf')">水资源论证报告.pdf</text>
           </view>
           <view class="table-r-time">
             <text>2021-09-10</text>

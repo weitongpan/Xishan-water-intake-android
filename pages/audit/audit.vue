@@ -56,9 +56,9 @@ export default {
           id: '01',
           t1: '2021',
           t2: '水审计报告.pdf',
-          t2Url: '../../static/file/d1/sjbg.pdf',
+          t2Url: 'https://demo.gzzyb.cn/android/Android/d1/sjbg.pdf',
           t3: '用水审计整改意见.pdf',
-          t3Url: '../../static/file/d1/sjzg.pdf'
+          t3Url: 'https://demo.gzzyb.cn/android/Android/d1/sjzg.pdf'
         },
         // {
         //   id: '02',

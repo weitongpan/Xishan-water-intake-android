@@ -28,7 +28,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-<!--              <image src="../../static/file/d1/jy.jpg" @click="viewPicture('../../static/file/d1/jy.jpg')"></image>-->
+<!--              <image src="https://demo.gzzyb.cn/android/Android/d1/jy.jpg" @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/jy.jpg')"></image>-->
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -36,7 +36,7 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-<!--              <image src="../../static/file/d1/jj.jpg" @click="viewPicture('../../static/file/d1/jj.jpg')"></image>-->
+<!--              <image src="https://demo.gzzyb.cn/android/Android/d1/jj.jpg" @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/jj.jpg')"></image>-->
             </view>
           </view>
         </view>
@@ -73,11 +73,11 @@
         <view class="x-r info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title"></text>
-            <text class="info3-box-left-r-content report" @click="viewPicture('../../static/file/d1/qssqs.pdf')">取水工程（设施）验收申请书</text>
+            <text class="info3-box-left-r-content report" @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/qssqs.pdf')">取水工程（设施）验收申请书</text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="viewPicture('../../static/file/d1/qsys.pdf')">取水工程（设施）验收报告</text>
+            <text class="info3-box-right-r-content report" @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/qsys.pdf')">取水工程（设施）验收报告</text>
           </view>
         </view>
         <view v-if="fictitiousData.monitor.number && fictitiousData.monitor.number > 0">
@@ -145,7 +145,7 @@
               <text>取水口远景图：</text>
             </view>
             <view class="img-box">
-<!--              <image src="../../static/file/d1/ly.jpg"  @click="viewPicture('../../static/file/d1/ly.jpg')"></image>-->
+<!--              <image src="https://demo.gzzyb.cn/android/Android/d1/ly.jpg"  @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/ly.jpg')"></image>-->
             </view>
           </view>
           <view class="info3-box-right img-right">
@@ -153,7 +153,7 @@
               <text>取水口特写图：</text>
             </view>
             <view class="img-box">
-<!--              <image src="../../static/file/d1/lj.jpg"  @click="viewPicture('../../static/file/d1/lj.jpg')"></image>-->
+<!--              <image src="https://demo.gzzyb.cn/android/Android/d1/lj.jpg"  @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/lj.jpg')"></image>-->
             </view>
           </view>
         </view>
@@ -164,7 +164,7 @@
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title"></text>
-            <text class="info3-box-right-r-content report" @click="viewPicture('../../static/file/d1/jljcbg.pdf')">计量设施检验报告</text>
+            <text class="info3-box-right-r-content report" @click="viewPicture('https://demo.gzzyb.cn/android/Android/d1/jljcbg.pdf')">计量设施检验报告</text>
           </view>
         </view>
         <view class="x-r info4-box">
