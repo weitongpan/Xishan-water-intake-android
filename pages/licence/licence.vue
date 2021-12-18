@@ -61,12 +61,12 @@
         <view class="info3-box">
           <view class="info3-box-left">
             <text class="info3-box-left-r-title">取水许可登记表：</text>
-            <text class="info3-box-left-r-content file" @click="viewPicture(fictitiousData.permit.djbPdfUrl)">{{ fictitiousData.permit.djbPafName }}</text>
+            <text class="info3-box-left-r-content file" @click="goPage(fictitiousData.permit.djbPdfUrl)">{{ fictitiousData.permit.djbPafName }}</text>
             <text class="info3-box-left-r-content"></text>
           </view>
           <view class="info3-box-right">
             <text class="info3-box-right-r-title">取水许可证：</text>
-            <text class="info3-box-right-r-content file" @click="previewFile(false)"></text>
+            <text class="info3-box-right-r-content file" @click="viewPicture(fictitiousData.permit.qsxkUrl)">{{ fictitiousData.permit.qsxk }}</text>
             <text class="info3-box-right-r-content"></text>
           </view>
         </view>
@@ -94,6 +94,11 @@ export default {
     ...mapState(['fictitiousData'])
   },
   methods: {
+    goPage(fileUrl) {
+      uni.navigateTo({
+        url: `/pages/web/preview/preview?fileUrl=${fileUrl}`
+      })
+    },
     previewFile(isShow) {
       if (isShow) {
         uni.navigateTo({
@@ -107,8 +112,23 @@ export default {
       }
     },
     viewPicture(path) {
-      uni.openDocument({
-        filePath: path
+      uni.showLoading({
+        title: 'loading……',
+        mask: true
+      })
+      uni.downloadFile({
+        url: path,
+        success: function (res) {
+          uni.hideLoading()
+          var filePath = res.tempFilePath;
+          uni.openDocument({
+            filePath: filePath,
+            showMenu: true,
+            success: function (res) {
+              console.log('打开文档成功');
+            }
+          })
+        }
       })
     }
   }

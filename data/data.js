@@ -1,7 +1,7 @@
 const data1 = {
 	id: 'D320205S2021-0050',
 	basicInformation: {
-		imgUrl: 'https://demo.gzzyb.cn/android/Android/d1/yyzz.jpg',
+		imgUrl: '../../static/file/d1/yyzz.jpg',
 		name: '无锡锡东环保能源有限公司',
 		unifiedAuthentication: '91320205684910709J',
 		representative: '熊建平',
@@ -36,6 +36,8 @@ const data1 = {
 		djbPafName: '取水许可登记表.pdf',
 		sqbPdfUrl: 'https://demo.gzzyb.cn/android/Android/d1/sqb.pdf',
 		sqbPafName: '取水许可申请表.pdf',
+		qsxk: '无锡锡东环保能源有限公司.pdf',
+		qsxkUrl: '../../static/file/d1/gs.pdf'
 	},
 	monitor: {
 		waterIntake: '47',

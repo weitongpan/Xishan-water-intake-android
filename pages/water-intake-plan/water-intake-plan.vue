@@ -50,7 +50,7 @@ export default {
           t3: '申请表.txt',
           t3Url: 'https://demo.gzzyb.cn/android/Android/d1/jhsq1.pdf',
           t4: '下达文件.pdf',
-          t4Url: 'https://demo.gzzyb.cn/android/Android/d1/jhxd1.pdf',
+          t4Url: '../../static/file/d1/qsxd.pdf',
           t5: '',
           t6: '',
         },
@@ -101,8 +101,23 @@ export default {
   },
   methods: {
     viewPicture(path) {
-      uni.openDocument({
-        filePath: path
+      uni.showLoading({
+        title: 'loading……',
+        mask: true
+      })
+      uni.downloadFile({
+        url: path,
+        success: function (res) {
+          uni.hideLoading()
+          var filePath = res.tempFilePath;
+          uni.openDocument({
+            filePath: filePath,
+            showMenu: true,
+            success: function (res) {
+              console.log('打开文档成功');
+            }
+          })
+        }
       })
     },
     previewFile(isShow) {

@@ -58,7 +58,7 @@ export default {
           t2: '水审计报告.pdf',
           t2Url: 'https://demo.gzzyb.cn/android/Android/d1/sjbg.pdf',
           t3: '用水审计整改意见.pdf',
-          t3Url: 'https://demo.gzzyb.cn/android/Android/d1/sjzg.pdf'
+          t3Url: '../../static/file/d1/yssj.pdf'
         },
         // {
         //   id: '02',
@@ -89,8 +89,23 @@ export default {
   },
   methods: {
     viewPicture(path) {
-      uni.openDocument({
-        filePath: path
+      uni.showLoading({
+        title: 'loading……',
+        mask: true
+      })
+      uni.downloadFile({
+        url: path,
+        success: function (res) {
+          uni.hideLoading()
+          var filePath = res.tempFilePath;
+          uni.openDocument({
+            filePath: filePath,
+            showMenu: true,
+            success: function (res) {
+              console.log('打开文档成功');
+            }
+          })
+        }
       })
     },
     previewFile(isShow) {

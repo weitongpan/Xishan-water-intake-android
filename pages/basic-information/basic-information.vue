@@ -112,8 +112,23 @@ import { mapState } from 'vuex'
 		},
     methods: {
       viewPicture(path) {
-        uni.openDocument({
-          filePath: path
+        uni.showLoading({
+          title: 'loading……',
+          mask: true
+        })
+        uni.downloadFile({
+          url: path,
+          success: function (res) {
+            uni.hideLoading()
+            var filePath = res.tempFilePath;
+            uni.openDocument({
+              filePath: filePath,
+              showMenu: true,
+              success: function (res) {
+                console.log('打开文档成功');
+              }
+            })
+          }
         })
       }
     }

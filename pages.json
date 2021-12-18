@@ -110,6 +110,15 @@
             }
 
         }
+        ,{
+            "path" : "pages/web/preview/preview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
